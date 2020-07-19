@@ -1,0 +1,11 @@
+1. Copy the restore.py script to the folder where CSVs are stored.
+2. Install the dependencies using pip3:
+	pip3 install psycopg2
+	pip3 install pymongo
+3. Run the script:
+	python3 restore.py
+
+
+**Note:
+This script assumes that you have mongodb and postreSQL installed and database in also created with the mentioned configuration.
+**

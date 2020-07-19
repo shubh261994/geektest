@@ -1,0 +1,37 @@
+package config
+
+import (
+	"github.com/op/go-logging"
+
+	"geektest/internal/configuration"
+)
+
+var config configuration.Config
+const namespace = "Geektest"
+
+/* ========== Mongo Config ================= */
+const MongoHost = "localhost"
+const MongoPort = 27017
+const MongoDbName = "geektest"
+
+/* ========== PostgreSQL Config ================= */
+const PostgreHost = "127.0.0.1"
+const PostgrePort = 5432
+const PostgreUser = "root"
+const PostgrePass = "geektest"
+const PostgreDbName = "geektest"
+
+func init() {
+	config = configuration.Config {
+		Namespace:    namespace,
+		Deployment:   configuration.DEBUG,
+		LogLevel:     logging.INFO,
+		LogFilePath:  "../logs/geektest.log",
+		RequestLogFilePath:  "../logs/request.log",
+		Port:         8080,
+	}
+}
+
+func GetConfig() *configuration.Config {
+	return &config
+}
